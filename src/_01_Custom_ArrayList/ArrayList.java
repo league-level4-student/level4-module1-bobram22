@@ -4,9 +4,9 @@ package _01_Custom_ArrayList;
 
 public class ArrayList <T>{
 	private T[] list;
-	int num = 0;
+	
 	public ArrayList() {
-		list = (T[])new Object[num];
+		list = (T[])new Object[1];
 	}
 	
 	public T get(int loc) throws IndexOutOfBoundsException {
@@ -15,11 +15,16 @@ public class ArrayList <T>{
 	}
 	
 	public void add(T val) {
-		list= (T[])new Object[num+1];
+		T[] temp = (T[]) new Object[list.length+1];
+		for(int i = 0; i < list.length; i++) {
+			temp[i] =list[i];
+		}
+		temp[list.length]=val;
+		list=temp;
 	}
 	
 	public void insert(int loc, T val) throws IndexOutOfBoundsException {
-		
+		list[loc]=val;
 	}
 	
 	public void set(int loc, T val) throws IndexOutOfBoundsException {
