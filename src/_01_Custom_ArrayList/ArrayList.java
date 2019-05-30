@@ -24,10 +24,22 @@ public class ArrayList <T>{
 	}
 	
 	public void insert(int loc, T val) throws IndexOutOfBoundsException {
-		list[loc]=val;
+		T[] temp = (T[]) new Object[list.length+1];
+		for(int i = 0; i < list.length; i++) {
+			if(i<loc) {
+				temp[i] = list [i];
+			}
+			else if(i==loc) {
+				temp[i]=val;
+			}
+			else {
+				temp[i]=list[i-1];
+			}
+		}
 	}
 	
 	public void set(int loc, T val) throws IndexOutOfBoundsException {
+		T[] temp = (T[]) new Object[list.length+1];
 		
 	}
 	
