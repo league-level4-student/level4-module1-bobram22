@@ -39,12 +39,21 @@ public class ArrayList <T>{
 	}
 	
 	public void set(int loc, T val) throws IndexOutOfBoundsException {
-		T[] temp = (T[]) new Object[list.length+1];
+		list[loc]=val;
 		
 	}
 	
 	public void remove(int loc) throws IndexOutOfBoundsException {
-		
+		T[] temp = (T[]) new Object[list.length-1];
+		for(int i=0; i<list.length;i++) {
+			if(i<loc) {
+				temp[i]=list[i];
+			}
+			else if(i>loc) {
+				temp[i-1]=list[i];
+			}
+			list[i]=temp[i];
+		}
 	}
 	
 	public boolean contains(T val) {
