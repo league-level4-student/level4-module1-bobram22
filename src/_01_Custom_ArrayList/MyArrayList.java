@@ -2,15 +2,14 @@ package _01_Custom_ArrayList;
 
 @SuppressWarnings("unchecked")
 
-public class ArrayList <T>{
+public class MyArrayList <T>{
 	private T[] list;
 	
-	public ArrayList() {
+	public MyArrayList() {
 		list = (T[])new Object[1];
 	}
 	
-	public T get(int loc) throws IndexOutOfBoundsException {
-		
+	public T get(int loc) throws IndexOutOfBoundsException {	
 		return list[loc];
 	}
 	
@@ -57,7 +56,16 @@ public class ArrayList <T>{
 	}
 	
 	public boolean contains(T val) {
+		boolean c = false;
+		for(int i = 0;i<list.length;i++) {
+			if(list[i].equals(val)) {
+				c= true;
+			}
+			else {
+				c=false;
+			}
+		}
+		return c;
 		
-		return false;
 	}
 }
