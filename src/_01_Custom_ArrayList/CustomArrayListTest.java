@@ -2,17 +2,16 @@ package _01_Custom_ArrayList;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-//Complete the ArrayList class using the template to make the tests pass.
+//Complete the MyArrayList class using the template to make the tests pass.
 
 public class CustomArrayListTest {
 
 	@Test
 	public void testAddAndGet() {
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		MyArrayList<Integer> list = new MyArrayList<Integer>();
 		list.add(0);
 		list.add(1);
 		list.add(206);
@@ -24,7 +23,7 @@ public class CustomArrayListTest {
 	
 	@Test
 	public void testSet() {
-		ArrayList<String> list = new ArrayList<String>();
+		MyArrayList<String> list = new MyArrayList<String>();
 		list.add("TESTER");
 		list.add("ONE");
 		list.add("TWO");
@@ -40,7 +39,7 @@ public class CustomArrayListTest {
 	
 	@Test
 	public void testAddAt() {
-		ArrayList<Character> list = new ArrayList<Character>();
+		MyArrayList<Character> list = new MyArrayList<Character>();
 		list.add('D');
 		list.add('I');
 		list.add('G');
@@ -63,7 +62,7 @@ public class CustomArrayListTest {
 				name = s;
 			}
 		}
-		ArrayList<Student> list = new ArrayList<Student>();
+		MyArrayList<Student> list = new MyArrayList<Student>();
 		list.add(new Student("Tim"));
 		list.add(new Student("Sara"));
 		list.add(new Student("Kamara"));
@@ -92,7 +91,7 @@ public class CustomArrayListTest {
 	
 	@Test
 	public void testContains() {
-		ArrayList<String> list = new ArrayList<String>();
+		MyArrayList<String> list = new MyArrayList<String>();
 		list.add("This");
 		list.add("is");
 		list.add("only");
@@ -108,7 +107,7 @@ public class CustomArrayListTest {
 	
 	@Test
 	public void testSize() {
-		ArrayList<String> list = new ArrayList<String>();
+		MyArrayList<String> list = new MyArrayList<String>();
 		list.add("This");
 		list.add("is");
 		list.add("only");
@@ -117,7 +116,7 @@ public class CustomArrayListTest {
 
 		assertTrue(list.size() == 5);
 		
-		ArrayList<Integer> list2 = new ArrayList<Integer>();
+		MyArrayList<Integer> list2 = new MyArrayList<Integer>();
 		list2.add(0);
 		list2.add(1);
 		list2.add(206);
@@ -127,7 +126,7 @@ public class CustomArrayListTest {
 	
 	@Test
 	public void testSizeOnRemove() {
-		ArrayList<String> list = new ArrayList<String>();
+		MyArrayList<String> list = new MyArrayList<String>();
 		list.add("This");
 		list.add("is");
 		list.add("only");

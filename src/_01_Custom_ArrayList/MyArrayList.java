@@ -1,12 +1,14 @@
 package _01_Custom_ArrayList;
 
+import java.util.Arrays;
+
 @SuppressWarnings("unchecked")
 
 public class MyArrayList <T>{
 	private T[] list;
 	
 	public MyArrayList() {
-		list = (T[])new Object[1];
+		list = (T[])new Object[0];
 	}
 	
 	public T get(int loc) throws IndexOutOfBoundsException {	
@@ -20,21 +22,27 @@ public class MyArrayList <T>{
 		}
 		temp[list.length]=val;
 		list=temp;
+		
+		
 	}
 	
 	public void insert(int loc, T val) throws IndexOutOfBoundsException {
 		T[] temp = (T[]) new Object[list.length+1];
-		for(int i = 0; i < list.length; i++) {
+		for(int i = 0; i < list.length+1; i++) {
 			if(i<loc) {
 				temp[i] = list [i];
 			}
 			else if(i==loc) {
 				temp[i]=val;
 			}
-			else {
+			else if(i>loc) {
 				temp[i]=list[i-1];
 			}
+			
 		}
+		
+		list=temp;
+		
 	}
 	
 	public void set(int loc, T val) throws IndexOutOfBoundsException {
@@ -57,7 +65,7 @@ public class MyArrayList <T>{
 	
 	public boolean contains(T val) {
 		boolean c = false;
-		for(int i = 0;i<list.length;i++) {
+		for(int i = 0;i<=list.length;i++) {
 			if(list[i].equals(val)) {
 				c= true;
 			}
@@ -66,6 +74,9 @@ public class MyArrayList <T>{
 			}
 		}
 		return c;
-		
+	}
+	
+	public int size() {
+		return list.length;
 	}
 }
